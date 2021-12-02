@@ -6,13 +6,13 @@ export class Node {
     }
   }
   
-  export default class DoubleLinkedList {
+export default class DoubleLinkedList {
     constructor() {
       this.head = null;
       this.tail = null;
       this.length = 0;
     }
-    
+
     push(value) {
       const node = new Node(value);
 
@@ -28,3 +28,4 @@ export class Node {
       this.length++;
     }
 }
+
