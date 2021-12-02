@@ -27,5 +27,17 @@ export default class DoubleLinkedList {
       }
       this.length++;
     }
+
+    getNodeAtIndex(index) {
+        let counter = 0;
+        let current = this.head;
+        
+        while(counter < index) {
+          current = current.next;
+          counter++;
+        }
+        return current;
+      }
+      
 }
 
