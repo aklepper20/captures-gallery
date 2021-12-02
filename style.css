@@ -17,6 +17,7 @@
 
 .hero-container {
     width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +41,6 @@
 
 .hero-image {
     width: 900px;
-    height: fit-content;
     border-radius: 4px;
     margin-top: 18px;
     margin-bottom: 18px;
@@ -49,7 +49,7 @@
 
 #viewer {
     border-radius: 4px;
-    height: 50vh;
+    /* height: 50vh; */
     width: 100%;
     object-fit: cover;
     object-position: center;
@@ -86,4 +86,13 @@ h1 {
     max-width: 1300px;
     height: 100vh;
     background-color: darkblue;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.card {
+ width: 300px;
+ height: auto;
+ margin: 30px;
 }
