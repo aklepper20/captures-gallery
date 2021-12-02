@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet">
 
     <title>Captures Gallery</title>
 </head>
@@ -14,21 +15,24 @@
 
         <div class="hero-container">
             <div class="left-arrow">
-                <i class="fas fa-angle-double-left fa-3x"></i>
+                <i id="prev" class="fas fa-angle-double-left fa-3x"></i>
             </div>
-    
             <div class="hero-image">
-    
+                <image
+                id="viewer"
+                class="center"
+                src="https://media.istockphoto.com/photos/happy-smiling-afro-businessman-using-laptop-at-the-desk-in-office-picture-id1310896133?b=1&k=20&m=1310896133&s=170667a&w=0&h=5CQB_XIR7bo-8oFOkAIjC4Yg4IXLOmcCRbyE-IMZF4Y="
+              />
             </div>
-
+            <p id="counter"></p>
             <div class="right-arrow">
-                <i class="fas fa-angle-double-right fa-3x"></i>
+                <i id="next" class="fas fa-angle-double-right fa-3x"></i>
             </div>
         </div>
       
 
         <div class="captures-banner">
-
+            <h1>CAPTURES GALLERY</h1>
         </div>
 
         <div class="gallery">
