@@ -59,11 +59,25 @@
     width: 100vw;
     height: 300px;
     background-color: crimson;
+    text-align: center;
 }
 
 h1 {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 16px;
+}
+
+#upload-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-color: #d7d7d7;
+    padding: 8px 5px;
+    border-radius: 4px;
+}
+
+#upload-btn:hover {
+    background-color: #eaeaea;
 }
 
 .gallery {

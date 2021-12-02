@@ -7,6 +7,7 @@ const prev = document.getElementById('prev');
 
 const list = new DoubleLinkedList();
 
+//Change to favorites array
 images.forEach((image) => list.push(image));
 console.log(list);
 
@@ -31,3 +32,11 @@ next.addEventListener('click', function () {
       viewer.src = list.getNodeAtIndex(idx).value;
     }
   });
+
+  //If a button is 'liked', then push it into the favorites array. That goes through the dll up on top
+
+  //have array that uploads images from an upload button and pushes/displays it in the captures gallery. 
+  //Use back ticks and roll out.
+
+  //when clicked, a module of the photo pops up
+  //when back arrow is clicked, it takes you back to the display page.
