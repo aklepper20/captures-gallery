@@ -74,13 +74,14 @@ h1 {
     background-color: #d7d7d7;
     padding: 8px 5px;
     border-radius: 4px;
+    transition-duration: 167ms;
 }
 
 #upload-btn:hover {
     background-color: #eaeaea;
 }
 
-.gallery {
+#gallery {
     width: 1300px;
     max-width: 1300px;
     height: 100vh;

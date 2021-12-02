@@ -5,6 +5,7 @@ const viewer = document.getElementById('viewer');
 const next = document.getElementById('next');
 const prev = document.getElementById('prev');
 
+
 const list = new DoubleLinkedList();
 
 //Change to favorites array
@@ -32,6 +33,8 @@ next.addEventListener('click', function () {
       viewer.src = list.getNodeAtIndex(idx).value;
     }
   });
+
+  
 
   //If a button is 'liked', then push it into the favorites array. That goes through the dll up on top
 
