@@ -10,7 +10,7 @@ const list = new DoubleLinkedList();
 
 //Change to favorites array
 images.forEach((image) => list.push(image));
-console.log(list);
+
 
 let idx = 0;
 
