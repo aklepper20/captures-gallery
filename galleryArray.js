@@ -6,7 +6,24 @@ galleryArray = [
 ]
 
 const galleryContainer = document.getElementById('gallery');
+renderImg();
 const uploadBtn = document.getElementById('upload-btn');
+const favoriteBtn = document.querySelectorAll('.far');
+
+for(let i = 0; i < favoriteBtn.length; i++) {
+    let btn = favoriteBtn[i];
+    let favoriteTheme = false;
+
+    btn.addEventListener('click', () => {
+        if (favoriteTheme == false) {
+            btn.style.backgroundColor = 'red';
+            favoriteTheme = true;
+        } else {
+            btn.style.backgroundColor = '';
+            favoriteTheme = false;
+        }
+    })
+}
 
 uploadBtn.addEventListener('change', (event) => {
     let input = event.target.value;
@@ -18,12 +35,12 @@ uploadBtn.addEventListener('change', (event) => {
 function renderImg() {
     let htmlString = '';
     for (let i = galleryArray.length - 1; i >= 0; i--) {
-        const newImg =   `<div id="card-container"> <image class="card" src=${galleryArray[i]} alt="Gallery Image"/> <i class="far fa-heart fa-2x"></i></div>`;
+        const newImg =   `<div id="card-container"> <image class="card" src=${galleryArray[i]} alt="Gallery Image"/> <i class="far fa-heart fa-2x favorite"></i></div>`;
         htmlString += newImg;
     }
     galleryContainer.innerHTML = htmlString;   
 }
-renderImg()
+
 
 console.log('hi')
 //within listener, create html for each photo that is for each item
