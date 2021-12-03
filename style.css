@@ -88,10 +88,21 @@ h1 {
     grid-template-columns: 33% 33% 33%;
 }
 
+#card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .card {
  width: 300px;
  height: auto;
  margin-top: 20px;
  margin-left: 20px;
  margin-right: 20px;
+}
+
+.fa-heart {
+    margin-top: 8px;
 }

@@ -7,8 +7,6 @@ galleryArray = [
 
 const galleryContainer = document.getElementById('gallery');
 const uploadBtn = document.getElementById('upload-btn');
-const reader = new FileReader();
-
 
 uploadBtn.addEventListener('change', (event) => {
     let input = event.target.value;
@@ -17,16 +15,13 @@ uploadBtn.addEventListener('change', (event) => {
     input = '';
 })
 
-let hi = document.getElementsByClassName('card')
-
 function renderImg() {
     let htmlString = '';
     for (let i = galleryArray.length - 1; i >= 0; i--) {
-        const newImg =   `<image class="card" src=${galleryArray[i]} alt="Gallery Image"/>`
+        const newImg =   `<div id="card-container"> <image class="card" src=${galleryArray[i]} alt="Gallery Image"/> <i class="far fa-heart fa-2x"></i></div>`;
         htmlString += newImg;
     }
-    galleryContainer.innerHTML = htmlString;
-    
+    galleryContainer.innerHTML = htmlString;   
 }
 renderImg()
 
@@ -34,10 +29,3 @@ console.log('hi')
 //within listener, create html for each photo that is for each item
 //loop through to put them on the dom
 //make the gallery.innerHTML = the string of the looped items
-
- // const reader = new FileReader();
-    // reader.addEventListener('load', () => {
-    //     uploadImg = reader.result
-    //     galleryArray.push(uploadImg)   
-    // })
-    // reader.readAsDataURL(this.files[0])
