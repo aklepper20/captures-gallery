@@ -7,38 +7,26 @@ galleryArray = [
 
 const galleryContainer = document.getElementById('gallery');
 const uploadBtn = document.getElementById('upload-btn');
-let uploadImg = '';
+const reader = new FileReader();
 
-// uploadBtn.addEventListener('change', function() {
-//     const reader = new FileReader();
-//     reader.addEventListener('load', () => {
-//         uploadImg = reader.result
-//         console.log(uploadImg)
-//         galleryArray.push(uploadImg)
-        
-//         // document.getElementById('gallery').style.backgroundImage = `url(${uploadImg})`
-//     })
-//     reader.readAsDataURL(this.files[0])
-// })
 
-// function createImg() {
-//     return
-//             `<div class="img-card">
-//                 <img src='' alt="Gallery Image"/>
-//             </div>
-//             `
-// }
+uploadBtn.addEventListener('change', (event) => {
+    let input = event.target.value;
+    galleryArray.push(input);
+    renderImg();
+    input = '';
+})
+
+let hi = document.getElementsByClassName('card')
 
 function renderImg() {
     let htmlString = '';
     for (let i = galleryArray.length - 1; i >= 0; i--) {
-        const newImg =   `<div class="img-card">
-                            <img class="card" src=${galleryArray[i]} alt="Gallery Image"/>
-                          </div>
-                         `
+        const newImg =   `<image class="card" src=${galleryArray[i]} alt="Gallery Image"/>`
         htmlString += newImg;
     }
-    galleryContainer.innerHTML = htmlString
+    galleryContainer.innerHTML = htmlString;
+    
 }
 renderImg()
 
@@ -46,3 +34,10 @@ console.log('hi')
 //within listener, create html for each photo that is for each item
 //loop through to put them on the dom
 //make the gallery.innerHTML = the string of the looped items
+
+ // const reader = new FileReader();
+    // reader.addEventListener('load', () => {
+    //     uploadImg = reader.result
+    //     galleryArray.push(uploadImg)   
+    // })
+    // reader.readAsDataURL(this.files[0])
