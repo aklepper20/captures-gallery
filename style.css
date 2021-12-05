@@ -83,7 +83,7 @@ h1 {
   width: 90%;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 4px;
@@ -111,9 +111,9 @@ h1 {
   border-radius: 4px;
   cursor: pointer;
 }
-
-@media (max-width: 600px) {
+/* 
+@media (max-width: 1000px) {
   #gallery {
     justify-content: center;
   }
-}
+} */
