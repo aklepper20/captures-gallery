@@ -28,21 +28,23 @@ uploadBtn.addEventListener("change", (event) => {
 });
 
 let cardContainer = document.querySelectorAll(".card-container");
-cardContainer.forEach((cardElement) => {
-  let imgSrc;
 
-  cardElement.addEventListener("click", setHandler(imgSrc));
-});
+//How do I toggle successfully back and forth between addeventlisteners? What is an easier way to do this
+function setHandler() {
+  cardContainer.forEach((cardElement) => {
+    let imgSrc;
 
-function setHandler(imgSrc) {
-  imgSrc = cardElement.children[0].src;
-  images.push(imgSrc);
-  console.log("WE PUSHED");
+    cardElement.addEventListener("click", () => {
+      imgSrc = cardElement.children[0].src;
+      images.push(imgSrc);
+      console.log("we pushed");
+    });
+  });
 }
 
 function removeHandler() {
   cardContainer.forEach((cardElement) => {
-    cardElement.addEventListener("click", setHandler);
+    cardElement.removeEventListener("click", setHandler);
     console.log("we popped");
   });
 }
