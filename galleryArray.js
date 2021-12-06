@@ -10,12 +10,12 @@ let galleryArray = [
 const galleryContainer = document.getElementById("gallery");
 renderImg();
 const uploadBtn = document.getElementById("upload-btn");
-const favoriteBtn = document.querySelectorAll(".far");
+let favoriteBtn = document.querySelectorAll(".far");
 
 function renderImg() {
   let htmlString = "";
   for (let i = galleryArray.length - 1; i >= 0; i--) {
-    const newImg = `<div id="card-container"><image class="card" src=${galleryArray[i]} alt="Gallery Image"/>  <i class="far fa-heart fa-2x favorite"></i></div>`;
+    const newImg = `<div class="card-container"><image class="card" src=${galleryArray[i]} alt="Gallery Image"/>  <i class="far fa-heart fa-2x favorite"></i></div>`;
     htmlString += newImg;
   }
   galleryContainer.innerHTML = htmlString;
@@ -27,30 +27,41 @@ uploadBtn.addEventListener("change", (event) => {
   renderImg();
 });
 
-// <i class="far fa-heart fa-2x favorite"></i></div>
+let cardContainer = document.querySelectorAll(".card-container");
+cardContainer.forEach((cardElement) => {
+  let imgSrc;
 
-// for (let i = 0; i < favoriteBtn.length; i++) {
-//   let btn = favoriteBtn[i];
-//   let favoriteTheme = false;
+  cardElement.addEventListener("click", setHandler(imgSrc));
+});
 
-//   btn.addEventListener("click", () => {
-//     if (favoriteTheme == false) {
-//       btn.style.backgroundColor = "red";
-//       btn.style.color = "white";
-//       favoriteTheme = true;
-//       push();
-//     } else {
-//       btn.style.backgroundColor = "";
-//       btn.style.color = "";
-//       favoriteTheme = false;
-//     }
-//   });
-// }
+function setHandler(imgSrc) {
+  imgSrc = cardElement.children[0].src;
+  images.push(imgSrc);
+  console.log("WE PUSHED");
+}
 
-// function push() {
-//   let img = document.getElementsByClassName("card");
+function removeHandler() {
+  cardContainer.forEach((cardElement) => {
+    cardElement.addEventListener("click", setHandler);
+    console.log("we popped");
+  });
+}
 
-//   for (let i in img) {
-//     console.log(img[i].src);
-//   }
-// }
+favoriteBtn.forEach((btn) => {
+  let favoriteTheme = false;
+
+  btn.addEventListener("click", () => {
+    if (favoriteTheme == false) {
+      btn.style.backgroundColor = "red";
+      btn.style.color = "white";
+      setHandler();
+      favoriteTheme = true;
+    } else {
+      btn.style.backgroundColor = "";
+      btn.style.color = "";
+      removeHandler();
+      favoriteTheme = false;
+    }
+  });
+});
+console.log(images);

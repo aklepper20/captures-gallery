@@ -89,7 +89,7 @@ h1 {
   border-radius: 4px;
 }
 
-#card-container {
+.card-container {
   width: 300px;
   height: 300px;
   display: flex;
